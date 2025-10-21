@@ -1,4 +1,5 @@
 # COS285Lab4
 
-Ella Hawkins
+##Team Members
 Kaylee Hallett
+Ella Hawkins
