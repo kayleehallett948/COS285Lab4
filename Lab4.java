@@ -25,9 +25,14 @@ public class Lab4 {
         // Add the data to the tree.
         tree.buildTree(data);
 
+        // Test breadth-first search printing method
+        System.out.println("\nHere is the tree printed in level order:");
+        tree.bfsTree();
+        System.out.println();
+
         // Test recursive search method
-        System.out.println(tree.recursiveSearch(12));
-        System.out.println(tree.recursiveSearch(3));
+        System.out.println("Testing if 12 is in the tree: " + tree.recursiveSearch(12));
+        System.out.println("Testing if 3 is in the tree: " + tree.recursiveSearch(3) + "\n");
 
     }
 

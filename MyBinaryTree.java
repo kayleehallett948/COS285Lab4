@@ -61,6 +61,28 @@ public class MyBinaryTree<E extends Comparable<E>> {
         }
     }
 
+    /** 
+     * Method to print the nodes in level order
+     */
+    public void bfsTree() {
+        if (root == null) {
+            return;
+        }
+        Queue<Node<E>> q = new ArrayDeque<Node<E>>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            Node<E> node = q.remove();
+            System.out.print(node.data + " ");
+            if (node.left != null) {
+                q.add(node.left);
+            }
+            if (node.right != null) {
+                q.add(node.right);
+            }
+        }
+        System.out.println();
+    }
+
     /**
      * Recursively searches for the target
      * @param target the element to search for
@@ -80,6 +102,6 @@ public class MyBinaryTree<E extends Comparable<E>> {
         if (node == null) return false;
         if (target.compareTo(node.data) < 0) return recursiveSearchHelper(target, node.left);
         if (target.compareTo(node.data) > 0) return recursiveSearchHelper(target, node.right);
-        else return true;
+        return true;
     }
 }
