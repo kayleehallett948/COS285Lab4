@@ -1,10 +1,12 @@
-package lab4;
+package COS285Lab4;
 
 import java.util.*;
 import java.io.*;
 
 /**Demonstrate the binary tree and its methods
  * @author Abby Pitcairn
+ * @author Kaylee Hallett
+ * @author Ella Hawkins
  * @version October 18, 2025
  */
 public class Lab4 {
@@ -22,6 +24,10 @@ public class Lab4 {
         
         // Add the data to the tree.
         tree.buildTree(data);
+
+        // Test recursive search method
+        System.out.println(tree.recursiveSearch(12));
+        System.out.println(tree.recursiveSearch(3));
 
     }
 

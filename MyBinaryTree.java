@@ -1,11 +1,13 @@
-package lab4;
+package COS285Lab4;
 
 import java.util.*;
 
 /**Creates a MyBinaryTree object that stores unsorted nodes in a binary tree.
  * @param <E> the data type of the elements in the tree
  * @author Abby Pitcairn
- * @version October 18, 2025
+ * @author Kaylee Hallett
+ * @author Ella Hawkins
+ * @version October 21, 2025
  */
 public class MyBinaryTree<E extends Comparable<E>> {
     
@@ -57,5 +59,27 @@ public class MyBinaryTree<E extends Comparable<E>> {
         for (E element : elements) {
             insert(element);
         }
+    }
+
+    /**
+     * Recursively searches for the target
+     * @param target the element to search for
+     * @return true if the element is in the tree, else false
+     */
+    public boolean recursiveSearch(E target) {
+        return recursiveSearchHelper(target, root);
+    }
+
+    /**
+     * Helper method for search
+     * @param target the element to search for
+     * @param node the local root
+     * @return true if the element is in the tree, else false
+     */
+    private boolean recursiveSearchHelper(E target, Node<E> node) {
+        if (node == null) return false;
+        if (target.compareTo(node.data) < 0) return recursiveSearchHelper(target, node.left);
+        if (target.compareTo(node.data) > 0) return recursiveSearchHelper(target, node.right);
+        else return true;
     }
 }
